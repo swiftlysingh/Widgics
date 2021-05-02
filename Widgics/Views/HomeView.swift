@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
-	
+
 	@State private var isAlertShown = false
-	
+
 	private var addButton: some View {
 		AnyView(Button(action: { isAlertShown = true }) {
 			Image(systemName: "plus")
 		})
 	}
-	
+
 	var body: some View {
 		NavigationView {
 			List {
-				Text("Hello")
+				
 			}
 			.navigationBarTitle("Home")
 			.navigationViewStyle(StackNavigationViewStyle())
