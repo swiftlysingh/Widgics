@@ -21,13 +21,19 @@ struct HomeView: View {
 	var body: some View {
 		NavigationView {
 			List {
-				
+				Section(header: Text(userSettings.sites[0])) {
+
+				}
 			}
 			.navigationBarTitle("Home")
 			.navigationViewStyle(StackNavigationViewStyle())
+			.listStyle(GroupedListStyle())
 			.navigationBarItems(trailing: addButton)
 		}
 		.alert(isPresented: $isAlertShown, TextAlert(title: "Add Sites", placeholder: "Enter a URL for a site", accept: "Add", cancel: "Cancel", action: onAdd ))
+		.onAppear {
+			DataManager.shared.updateData(for: View.self)
+		}
 	}
 }
 
