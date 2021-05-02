@@ -67,6 +67,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FF004937263EE6AB0085AA7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF004935263ED0280085AA7A /* UserSettings.swift */,
+				FFE38A56263DA204006980F7 /* DataManager.swift */,
+				FFE38A58263DA491006980F7 /* RealTimeVisitors.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF004938263EE6EC0085AA7A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFE38A5E263E2706006980F7 /* SettingsModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FFE38A3B263D90BE006980F7 = {
 			isa = PBXGroup;
 			children = (
@@ -87,14 +105,13 @@
 			isa = PBXGroup;
 			children = (
 				FFE38A47263D90BE006980F7 /* WidgicsApp.swift */,
+				FF004937263EE6AB0085AA7A /* Model */,
 				FF004934263E9D490085AA7A /* Views */,
+				FF004938263EE6EC0085AA7A /* ViewModel */,
+				FF004933263E3C730085AA7A /* Extensions */,
 				FFE38A4B263D90C1006980F7 /* Assets.xcassets */,
 				FFE38A50263D90C1006980F7 /* Info.plist */,
 				FFE38A4D263D90C1006980F7 /* Preview Content */,
-				FFE38A56263DA204006980F7 /* DataManager.swift */,
-				FFE38A58263DA491006980F7 /* RealTimeVisitors.swift */,
-				FF004933263E3C730085AA7A /* Extensions */,
-				FF004935263ED0280085AA7A /* UserSettings.swift */,
 			);
 			path = Widgics;
 			sourceTree = "<group>";
@@ -112,7 +129,6 @@
 			children = (
 				FFE38A49263D90BE006980F7 /* SettingsView.swift */,
 				FFE38A5C263E262E006980F7 /* SettingsRow.swift */,
-				FFE38A5E263E2706006980F7 /* SettingsModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";

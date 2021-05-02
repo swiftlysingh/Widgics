@@ -18,7 +18,7 @@ struct ContentView: View {
 			SettingsView(viewModel: .init())
 				.tabItem {
 					Image(systemName: "gearshape.fill")
-					Text("Settingss")
+					Text("Settings")
 				}
 		} 
     }

@@ -16,10 +16,4 @@ class DataManager {
 	func updateData<T>(for data: T) {
 
 	}
-
-	enum DecoderStruct {
-		case RealTimeVisitors
-		case Aggregate
-		case TimeSeries
-	}
 }
