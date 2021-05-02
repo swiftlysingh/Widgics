@@ -9,11 +9,6 @@ import SwiftUI
 
 struct SettingsView: View {
 
-	@State var isSelfHosted : Bool = false
-	@State var url : String = ""
-	@State var apiKey : String = ""
-	@State var isAPIKeyVisible: Bool = false
-
 	@ObservedObject var viewModel: SettingsViewModel
 
 	var body: some View {
@@ -22,35 +17,35 @@ struct SettingsView: View {
 				Section {
 					HStack() {
 						Text("Is your instance self hosted?")
-						Picker(selection: $isSelfHosted, label: Text("Is your instance self hosted?"), content: {
+						Picker(selection: $viewModel.isSelfHosted, label: Text("Is your instance self hosted?"), content: {
 							Text("Yes").tag(true)
 							Text("No").tag(false)
 						})
 						.pickerStyle(SegmentedPickerStyle())
 					}
-					if isSelfHosted {
-						TextField("Enter URL for your instance", text: $url, onCommit:  {
+					if viewModel.isSelfHosted {
+						TextField("Enter URL for your instance", text: $viewModel.url, onCommit:  {
 							/* if url != shared.url then shared.url = url*/
 						})
 				}
 				}
 				Section {
 					HStack {
-						SecureField("API key", text: $apiKey, onCommit:  {
+						SecureField("API key", text: $viewModel.apiKey, onCommit:  {
 							/* if apikey != shared.api then shared.api = api*/
 						})
 						Button(action: {
-							isAPIKeyVisible.toggle()
+							viewModel.isAPIKeyVisible.toggle()
 						}, label: {
-							isAPIKeyVisible ? Image(systemName: "eye") : Image(systemName: "eye.slash")
+							viewModel.isAPIKeyVisible ? Image(systemName: "eye") : Image(systemName: "eye.slash")
 						})
 						.buttonStyle(BorderlessButtonStyle())
 						Link(destination: URL(string : "https://plausible.io/docs/stats-api#concepts")!){
 							Image(systemName: "info.circle")
 						}
 					}
-					if isAPIKeyVisible {
-						Text(apiKey)
+					if viewModel.isAPIKeyVisible {
+						Text(viewModel.apiKey)
 					}
 				}
 				Section(footer: footer) {

@@ -5,11 +5,16 @@
 //  Created by Ander Goig on 20/10/2020.
 //
 
-import Foundation
+import SwiftUI
 
 final class SettingsViewModel: ObservableObject {
 
     @Published private(set) var footerItems: [SettingsItem] = [.rate, .share, .feedback, .openSource]
+
+	@Published var url : String = ""
+	@Published var isSelfHosted : Bool = false
+	@Published var apiKey : String = ""
+	@Published var isAPIKeyVisible: Bool = false
 
     var rateURL: URL {
         URL(string: "itms-apps://apps.apple.com/app/id1537192731?action=write-review")!
