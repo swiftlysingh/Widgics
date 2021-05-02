@@ -2,15 +2,14 @@
 //  ContentView.swift
 //  Widgics
 //
-//  Created by Pushpinder Pal Singh on 01/05/21.
+//  Created by Pushpinder Pal Singh on 02/05/21.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
