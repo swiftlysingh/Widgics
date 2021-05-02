@@ -10,6 +10,7 @@
 		FF004930263E350A0085AA7A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF00492F263E350A0085AA7A /* HomeView.swift */; };
 		FF004932263E3B0D0085AA7A /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF004931263E3B0D0085AA7A /* UIAlertControllerExtensions.swift */; };
 		FF004936263ED0280085AA7A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF004935263ED0280085AA7A /* UserSettings.swift */; };
+		FF00493C263F2F330085AA7A /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF00493B263F2F330085AA7A /* VisitorView.swift */; };
 		FFE38A48263D90BE006980F7 /* WidgicsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A47263D90BE006980F7 /* WidgicsApp.swift */; };
 		FFE38A4A263D90BE006980F7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A49263D90BE006980F7 /* SettingsView.swift */; };
 		FFE38A4C263D90C1006980F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE38A4B263D90C1006980F7 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		FF00492F263E350A0085AA7A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FF004931263E3B0D0085AA7A /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
 		FF004935263ED0280085AA7A /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		FF00493B263F2F330085AA7A /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		FFE38A44263D90BE006980F7 /* Widgics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Widgics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE38A47263D90BE006980F7 /* WidgicsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgicsApp.swift; sourceTree = "<group>"; };
 		FFE38A49263D90BE006980F7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				FFE38A60263E2A93006980F7 /* ContentView.swift */,
 				FF00492F263E350A0085AA7A /* HomeView.swift */,
 				FFE38A62263E2E7B006980F7 /* Settings */,
+				FF00493B263F2F330085AA7A /* VisitorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF00493C263F2F330085AA7A /* VisitorView.swift in Sources */,
 				FFE38A4A263D90BE006980F7 /* SettingsView.swift in Sources */,
 				FFE38A57263DA204006980F7 /* DataManager.swift in Sources */,
 				FFE38A61263E2A93006980F7 /* ContentView.swift in Sources */,
