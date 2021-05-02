@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
 
 	@ObservedObject var viewModel: SettingsViewModel
+	@ObservedObject private var userSettings = UserSettings.shared
 
 	var body: some View {
 		NavigationView {
@@ -17,23 +18,23 @@ struct SettingsView: View {
 				Section {
 					HStack() {
 						Text("Is your instance self hosted?")
-						Picker(selection: $viewModel.isSelfHosted, label: Text("Is your instance self hosted?"), content: {
+						Picker(selection: $userSettings.isSelfHosted, label: Text("Is your instance self hosted?"), content: {
 							Text("Yes").tag(true)
 							Text("No").tag(false)
 						})
 						.pickerStyle(SegmentedPickerStyle())
 					}
-					if viewModel.isSelfHosted {
-						TextField("Enter URL for your instance", text: $viewModel.url, onCommit:  {
-							/* if url != shared.url then shared.url = url*/
+
+					if userSettings.isSelfHosted {
+						TextField("Enter URL for your instance", text: $userSettings.address, onCommit:  {
+							let complete = userSettings.address.last == "/" ? "api/v1/stats" : "/api/v1/stats"
+							userSettings.address = userSettings.address + complete
 						})
-				}
+					}
 				}
 				Section {
 					HStack {
-						SecureField("API key", text: $viewModel.apiKey, onCommit:  {
-							/* if apikey != shared.api then shared.api = api*/
-						})
+						SecureField("API key", text: $userSettings.apiKey)
 						Button(action: {
 							viewModel.isAPIKeyVisible.toggle()
 						}, label: {
@@ -45,7 +46,7 @@ struct SettingsView: View {
 						}
 					}
 					if viewModel.isAPIKeyVisible {
-						Text(viewModel.apiKey)
+						Text(userSettings.apiKey)
 					}
 				}
 				Section(footer: footer) {

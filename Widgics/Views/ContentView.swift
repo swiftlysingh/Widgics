@@ -20,7 +20,7 @@ struct ContentView: View {
 					Image(systemName: "gearshape.fill")
 					Text("Settingss")
 				}
-		}
+		} 
     }
 }
 

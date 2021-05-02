@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
 
+	@ObservedObject private var userSettings = UserSettings.shared
 	@State private var isAlertShown = false
 
 	private var addButton: some View {
@@ -39,8 +40,8 @@ struct HomeView_Previews: PreviewProvider {
 //MARK: - Private
 
 extension HomeView {
-	private func onAdd(username: String?){
-		guard let username = username else { return }
-		// Add site into Singleton.
+	private func onAdd(site: String?){
+		guard let site = site else { return }
+		userSettings.sites.append(site)
 	}
 }

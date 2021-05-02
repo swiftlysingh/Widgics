@@ -11,9 +11,6 @@ final class SettingsViewModel: ObservableObject {
 
     @Published private(set) var footerItems: [SettingsItem] = [.rate, .share, .feedback, .openSource]
 
-	@Published var url : String = ""
-	@Published var isSelfHosted : Bool = false
-	@Published var apiKey : String = ""
 	@Published var isAPIKeyVisible: Bool = false
 
     var rateURL: URL {
