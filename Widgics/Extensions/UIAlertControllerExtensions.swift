@@ -79,6 +79,8 @@ extension UIAlertController {
             alert.action(nil)
         })
         let textField = textFields?.first
+		textField?.textContentType = .URL
+		textField?.placeholder = "https://"
         addAction(UIAlertAction(title: alert.accept, style: .default) { _ in
             alert.action(textField?.text)
         })

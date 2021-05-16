@@ -9,7 +9,7 @@ import SwiftUI
 
 final class SettingsViewModel: ObservableObject {
 
-    @Published private(set) var footerItems: [SettingsItem] = [.rate, .share, .feedback, .openSource]
+    @Published private(set) var footerItems: [SettingsItem] = [.rate, .share, .feedback]
 
 	@Published var isAPIKeyVisible: Bool = false
 

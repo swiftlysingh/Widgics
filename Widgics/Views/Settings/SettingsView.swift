@@ -30,11 +30,13 @@ struct SettingsView: View {
 							let complete = userSettings.address.last == "/" ? "api/v1/stats" : "/api/v1/stats"
 							userSettings.address = userSettings.address + complete
 						})
+						.textContentType(.URL)
 					}
 				}
 				Section {
 					HStack {
 						SecureField("API key", text: $userSettings.apiKey)
+							.textContentType(.password)
 						Button(action: {
 							viewModel.isAPIKeyVisible.toggle()
 						}, label: {
@@ -94,8 +96,6 @@ extension SettingsView {
 			present(UIActivityViewController(activityItems: [viewModel.shareURL], applicationActivities: nil), animated: true)
 		case .feedback:
 			openURL(viewModel.feedbackURL)
-		case .openSource:
-			openURL(viewModel.openSourceURL)
 		}
 	}
 	private func openURL(_ url: URL) {

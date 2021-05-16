@@ -47,14 +47,13 @@ struct SettingsItem_Previews: PreviewProvider {
 
 enum SettingsItem: Int {
 
-	case rate, share, feedback, openSource
+	case rate, share, feedback
 
 	var title: LocalizedStringKey {
 		switch self {
 		case .rate: return "Rate the App"
 		case .share: return "Share"
 		case .feedback: return "Feedback"
-		case .openSource: return "Open Source"
 		}
 	}
 
@@ -63,7 +62,6 @@ enum SettingsItem: Int {
 		case .rate: return "Are you loving it?"
 		case .share: return "Spread the word!"
 		case .feedback: return "pushpinderpal19@gmail.com"
-		case .openSource: return "settings-row-open-source-subtitle"
 		}
 	}
 
@@ -71,7 +69,6 @@ enum SettingsItem: Int {
 		switch self {		case .rate: return "star.fill"
 		case .share: return "square.and.arrow.up"
 		case .feedback: return "at"
-		case .openSource: return "swift"
 		}
 	}
 
@@ -79,9 +76,7 @@ enum SettingsItem: Int {
 		switch self {
 		case .rate: return .pink
 		case .share: return .green
-		case .feedback: return .blue
-		case .openSource: return .orange
-		}
+		case .feedback: return .blue		}
 	}
 
 }

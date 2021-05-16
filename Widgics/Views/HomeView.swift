@@ -21,9 +21,12 @@ struct HomeView: View {
 	var body: some View {
 		NavigationView {
 			List {
-				Section(header: Text(userSettings.sites[0])) {
+				ForEach(userSettings.sites,id: \.self) { site in
+					Section(header: Text(site)) {
 
+					}
 				}
+
 			}
 			.navigationBarTitle("Home")
 			.navigationViewStyle(StackNavigationViewStyle())
