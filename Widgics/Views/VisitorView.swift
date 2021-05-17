@@ -12,7 +12,25 @@ struct VisitorView: View {
 	@ObservedObject private var dataManager = DataManager.shared
 
 	var body: some View {
-	HStack {
+		StatisticsView()
+	.frame(width: 170, height: 170)
+	}
+}
+
+struct VisitorView_Previews: PreviewProvider {
+    static var previews: some View {
+        VisitorView()
+			.previewLayout(PreviewLayout.fixed(width: 170, height: 170))
+			.padding()
+    }
+}
+
+// MARK: - View Functions
+
+extension VisitorView {
+
+	fileprivate func StatisticsView() -> some View {
+		return HStack {
 			VStack {
 				Text("\(dataManager.visitors)")
 					.font(.system(size: 56))
@@ -30,15 +48,8 @@ struct VisitorView: View {
 				.foregroundColor(.green)
 				Spacer()
 			}
+			.padding(.leading,7.0)
 			Spacer()
 		}
-	.frame(width: 170, height: 170)
 	}
-}
-struct VisitorView_Previews: PreviewProvider {
-    static var previews: some View {
-        VisitorView()
-			.previewLayout(PreviewLayout.fixed(width: 170, height: 170))
-			.padding()
-    }
 }
