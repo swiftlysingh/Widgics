@@ -15,7 +15,7 @@ struct VisitorView: View {
 		VStack {
 			StatisticsView()
 //			Spacer()
-			GraphView(visitors: [0,123,678,345,784,100,606,06,0600,0606,50,900])
+			GraphView(visitors: [0,123,678,345,784,100,606,6,0600,0606,50,2000])
 
 		}
 		.frame(width: 170, height: 170)
@@ -57,10 +57,10 @@ extension VisitorView {
 		}
 	}
 
-	fileprivate func GraphView(visitors : [Int]) -> some View {
+	fileprivate func GraphView(visitors : [Double]) -> some View {
 		return GeometryReader { reader in
 			GeometryReader{ geometry in
-				Line(data: ChartData(points: [12.3,2.0,23.0]), frame: .constant(geometry.frame(in: .local)), touchLocation: .constant(CGPoint(x: 100, y: 12)), showIndicator: .constant(true), minDataValue: .constant(nil), maxDataValue: .constant(nil),gradient: GradientColor(start: Color.blue, end: Color.blue))
+				Line(data: ChartData(points: visitors), frame: .constant(geometry.frame(in: .local)),color: [.red])
 
 				.offset(x: 0, y: 0)
 			}
