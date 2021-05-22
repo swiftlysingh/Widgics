@@ -59,10 +59,9 @@ extension VisitorView {
 
 	fileprivate func GraphView(visitors : [Int]) -> some View {
 		return GeometryReader { reader in
-			GeometryReader{ reader in
-				Line(data: visitors,
-					 frame: .constant(CGRect(x: 0, y: 0, width: reader.frame(in: .local).width , height: reader.frame(in: .local).height+20))
-				)
+			GeometryReader{ geometry in
+				Line(data: ChartData(points: [12.3,2.0,23.0]), frame: .constant(geometry.frame(in: .local)), touchLocation: .constant(CGPoint(x: 100, y: 12)), showIndicator: .constant(true), minDataValue: .constant(nil), maxDataValue: .constant(nil),gradient: GradientColor(start: Color.blue, end: Color.blue))
+
 				.offset(x: 0, y: 0)
 			}
 //			.offset(x: 0, y: 0)
