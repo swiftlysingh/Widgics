@@ -15,7 +15,7 @@ struct VisitorView: View {
 		VStack {
 			StatisticsView()
 //			Spacer()
-			GraphView(visitors: [0,123,678,345,784,100,606,6,0600,0606,50,2000])
+			GraphView(visitors: [0,123,500,345,784,100,606,6,0600,0606,50])
 
 		}
 		.frame(width: 170, height: 170)
@@ -60,9 +60,13 @@ extension VisitorView {
 	fileprivate func GraphView(visitors : [Double]) -> some View {
 		return GeometryReader { reader in
 			GeometryReader{ geometry in
-				Line(data: ChartData(points: visitors), frame: .constant(geometry.frame(in: .local)),color: [.red])
+				ZStack {
+					Line(data: ChartData(points:visitors), frame: .constant(geometry.frame(in: .local)),color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
+						.offset(x: 0, y: -10)
+					Line(data: ChartData(points: visitors), frame: .constant(geometry.frame(in: .local)),color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
+						.offset(x: 0, y: 0)
 
-				.offset(x: 0, y: 0)
+				}
 			}
 //			.offset(x: 0, y: 0)
 		}
