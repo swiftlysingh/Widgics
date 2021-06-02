@@ -9,16 +9,14 @@ import SwiftUI
 
 struct VisitorView: View {
 
-	@ObservedObject private var dataManager = DataManager.shared
+	@ObservedObject private var data = VisitorsModel.shared
 
 	var body: some View {
 		VStack {
 			StatisticsView()
-//			Spacer()
-			GraphView(visitors: [0,123,500,345,784,100,606,6,0600,0606,50])
+			GraphView()
 
 		}
-		.frame(width: 170, height: 170)
 	}
 }
 
@@ -36,7 +34,7 @@ extension VisitorView {
 	fileprivate func StatisticsView() -> some View {
 		return HStack {
 			VStack {
-				Text("\(dataManager.visitors)")
+				Text("\(data.views.last!)" as String)
 					.font(.system(size: 56))
 					.fontWeight(.bold)
 					.multilineTextAlignment(.trailing)
@@ -57,18 +55,16 @@ extension VisitorView {
 		}
 	}
 
-	fileprivate func GraphView(visitors : [Double]) -> some View {
+	fileprivate func GraphView() -> some View {
 		return GeometryReader { reader in
 			GeometryReader{ geometry in
 				ZStack {
-					Line(data: ChartData(points:visitors), frame: .constant(geometry.frame(in: .local)),color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
+					Line(frame: .constant(geometry.frame(in: .local)),color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
 						.offset(x: 0, y: -10)
-					Line(data: ChartData(points: visitors), frame: .constant(geometry.frame(in: .local)),color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
+					Line(frame: .constant(geometry.frame(in: .local)),color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
 						.offset(x: 0, y: 0)
-
 				}
 			}
-//			.offset(x: 0, y: 0)
 		}
 	}
 }

@@ -24,7 +24,7 @@ class UserSettings: ObservableObject {
 			UserDefaults.standard.set(apiKey, forKey: "apiKey")
 		}
 	}
-
+ 
 	@Published var sites : [String] {
 		didSet {
 			print(sites)

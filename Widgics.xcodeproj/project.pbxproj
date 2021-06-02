@@ -11,17 +11,17 @@
 		FF004932263E3B0D0085AA7A /* UIAlertControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF004931263E3B0D0085AA7A /* UIAlertControllerExtensions.swift */; };
 		FF004936263ED0280085AA7A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF004935263ED0280085AA7A /* UserSettings.swift */; };
 		FF00493C263F2F330085AA7A /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF00493B263F2F330085AA7A /* VisitorView.swift */; };
+		FF18D6C62667FF340006A3F4 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18D6C52667FF340006A3F4 /* CGPoint.swift */; };
 		FFAE0F3C26530F220064A928 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE0F3B26530F220064A928 /* Line.swift */; };
 		FFE38A48263D90BE006980F7 /* WidgicsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A47263D90BE006980F7 /* WidgicsApp.swift */; };
 		FFE38A4A263D90BE006980F7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A49263D90BE006980F7 /* SettingsView.swift */; };
 		FFE38A4C263D90C1006980F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE38A4B263D90C1006980F7 /* Assets.xcassets */; };
 		FFE38A4F263D90C1006980F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFE38A4E263D90C1006980F7 /* Preview Assets.xcassets */; };
 		FFE38A57263DA204006980F7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A56263DA204006980F7 /* DataManager.swift */; };
-		FFE38A59263DA491006980F7 /* RealTimeVisitors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A58263DA491006980F7 /* RealTimeVisitors.swift */; };
 		FFE38A5D263E262F006980F7 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A5C263E262E006980F7 /* SettingsRow.swift */; };
 		FFE38A5F263E2706006980F7 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A5E263E2706006980F7 /* SettingsModel.swift */; };
 		FFE38A61263E2A93006980F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A60263E2A93006980F7 /* ContentView.swift */; };
-		FFEBF7FF26592D6700D587D9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBF7FE26592D6700D587D9 /* Helper.swift */; };
+		FFEBF7FF26592D6700D587D9 /* VisitorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBF7FE26592D6700D587D9 /* VisitorsModel.swift */; };
 		FFEBF80326592E5000D587D9 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBF80226592E5000D587D9 /* Path.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +30,7 @@
 		FF004931263E3B0D0085AA7A /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
 		FF004935263ED0280085AA7A /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		FF00493B263F2F330085AA7A /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		FF18D6C52667FF340006A3F4 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		FFAE0F3B26530F220064A928 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		FFE38A44263D90BE006980F7 /* Widgics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Widgics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE38A47263D90BE006980F7 /* WidgicsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgicsApp.swift; sourceTree = "<group>"; };
@@ -38,11 +39,10 @@
 		FFE38A4E263D90C1006980F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFE38A50263D90C1006980F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFE38A56263DA204006980F7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		FFE38A58263DA491006980F7 /* RealTimeVisitors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeVisitors.swift; sourceTree = "<group>"; };
 		FFE38A5C263E262E006980F7 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		FFE38A5E263E2706006980F7 /* SettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		FFE38A60263E2A93006980F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FFEBF7FE26592D6700D587D9 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		FFEBF7FE26592D6700D587D9 /* VisitorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorsModel.swift; sourceTree = "<group>"; };
 		FFEBF80226592E5000D587D9 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +62,7 @@
 			children = (
 				FF004931263E3B0D0085AA7A /* UIAlertControllerExtensions.swift */,
 				FFEBF80226592E5000D587D9 /* Path.swift */,
+				FF18D6C52667FF340006A3F4 /* CGPoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -81,9 +82,9 @@
 		FF004937263EE6AB0085AA7A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FF004935263ED0280085AA7A /* UserSettings.swift */,
 				FFE38A56263DA204006980F7 /* DataManager.swift */,
-				FFE38A58263DA491006980F7 /* RealTimeVisitors.swift */,
+				FF004935263ED0280085AA7A /* UserSettings.swift */,
+				FFEBF7FE26592D6700D587D9 /* VisitorsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,7 +124,6 @@
 				FFE38A4B263D90C1006980F7 /* Assets.xcassets */,
 				FFE38A50263D90C1006980F7 /* Info.plist */,
 				FFE38A4D263D90C1006980F7 /* Preview Content */,
-				FFEBF7FE26592D6700D587D9 /* Helper.swift */,
 			);
 			path = Widgics;
 			sourceTree = "<group>";
@@ -221,12 +221,12 @@
 				FFAE0F3C26530F220064A928 /* Line.swift in Sources */,
 				FFE38A48263D90BE006980F7 /* WidgicsApp.swift in Sources */,
 				FF004932263E3B0D0085AA7A /* UIAlertControllerExtensions.swift in Sources */,
-				FFE38A59263DA491006980F7 /* RealTimeVisitors.swift in Sources */,
 				FFEBF80326592E5000D587D9 /* Path.swift in Sources */,
 				FF004936263ED0280085AA7A /* UserSettings.swift in Sources */,
 				FF004930263E350A0085AA7A /* HomeView.swift in Sources */,
-				FFEBF7FF26592D6700D587D9 /* Helper.swift in Sources */,
+				FFEBF7FF26592D6700D587D9 /* VisitorsModel.swift in Sources */,
 				FFE38A5D263E262F006980F7 /* SettingsRow.swift in Sources */,
+				FF18D6C62667FF340006A3F4 /* CGPoint.swift in Sources */,
 				FFE38A5F263E2706006980F7 /* SettingsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

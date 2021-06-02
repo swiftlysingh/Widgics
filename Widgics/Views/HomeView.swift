@@ -23,7 +23,11 @@ struct HomeView: View {
 			List {
 				ForEach(userSettings.sites,id: \.self) { site in
 					Section(header: Text(site)) {
-
+						VisitorView()
+							.frame(width: 170, height: 170)
+							.cornerRadius(20)
+							.overlay(RoundedRectangle(cornerRadius: 20)
+										.stroke(Color.secondary, lineWidth: 1))
 					}
 				}
 

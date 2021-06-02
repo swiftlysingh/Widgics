@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct Line: View {
-	@ObservedObject var data: ChartData
+	@ObservedObject var data = VisitorsModel.shared
 	@Binding var frame: CGRect
 	@State private var showFull: Bool = false
 
 	var color: [Color] = [.blue]
-	var minDataValue: Double = 0.0
-	var maxDataValue: Double? = nil
+	var minDataValue: Int = 0
+	var maxDataValue: Int? = nil
 	var index:Int = 0
 	let padding:CGFloat = 30
 
 	var stepWidth: CGFloat {
-		if data.points.count < 2 {
+		if data.views.count < 2 {
 			return 0
 		}
-		return frame.size.width / CGFloat(data.points.count-1)
+		return frame.size.width / CGFloat(data.views.count-1)
 	}
 	var stepHeight: CGFloat {
 		let min = minDataValue
-		let max = data.onlyPoints().max()
+		let max = data.views.max()
 		if let max = max, min != max {
 			if (min <= 0){
 				return (frame.size.height-padding) / CGFloat(max - min)
@@ -37,7 +37,7 @@ struct Line: View {
 		return 0
 	}
 	var closedPath: Path {
-		let points = self.data.onlyPoints()
+		let points = self.data.views
 		return Path.quadClosedCurvedPathWithPoints(points: points, step: CGPoint(x: stepWidth, y: stepHeight), globalOffset: minDataValue)
 	}
 
@@ -57,9 +57,8 @@ struct Line: View {
 struct Line_Previews: PreviewProvider {
 
 	static var previews: some View {
-		let visitors : [Float] = [12.3,23.0,900.0,-100.0,2200]
 		GeometryReader{ geometry in
-			Line(data: ChartData(points: visitors), frame: .constant(geometry.frame(in: .local)))
+			Line(frame: .constant(geometry.frame(in: .local)))
 		}.frame(width: 320, height: 160)
 	}
 }

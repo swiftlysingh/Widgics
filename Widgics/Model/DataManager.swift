@@ -10,14 +10,7 @@ import SwiftUI
 class DataManager: ObservableObject{
 
 	@ObservedObject private var userSettings = UserSettings.shared
-
-	@Published var visitors : String = "10" {
-		didSet {
-			guard let count = Int(visitors) else {return}
-
-			visitors = count >= 1000 ? "\(count/1000)k" : "\(count)"
-		}
-	}
+	@ObservedObject private var visitorViews = VisitorsModel.shared
 
 	static let shared = DataManager()
 
@@ -33,8 +26,10 @@ class DataManager: ObservableObject{
 			guard let data = data,(error == nil) else {return}
 
 			guard let decodeData = try? JSONDecoder().decode(Int.self, from: data) else {return}
-			self.visitors = "\(decodeData)"
-			print(self.visitors)
+
+			DispatchQueue.main.async {
+				self.visitorViews.views.append(decodeData)
+			}
 		}.resume()
 	}
 }
