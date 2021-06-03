@@ -9,20 +9,23 @@ import SwiftUI
 
 struct VisitorView: View {
 
-	@ObservedObject private var data = VisitorsModel.shared
+	@ObservedObject private var viewModel = VisitorsViewModel.shared
+	let site: String
 
 	var body: some View {
 		VStack {
 			StatisticsView()
 			GraphView()
-
 		}
+		.onAppear(perform: {
+			viewModel.getNewData(for: site)
+		})
 	}
 }
 
 struct VisitorView_Previews: PreviewProvider {
     static var previews: some View {
-        VisitorView()
+		VisitorView(site: "swiftlysingh.com")
 			.previewLayout(PreviewLayout.fixed(width: 170, height: 170))
     }
 }
@@ -34,7 +37,7 @@ extension VisitorView {
 	fileprivate func StatisticsView() -> some View {
 		return HStack {
 			VStack {
-				Text("\(data.views.last!)" as String)
+				Text("\(viewModel.data[site]!.visitors.last!)" as String)
 					.font(.system(size: 56))
 					.fontWeight(.bold)
 					.multilineTextAlignment(.trailing)
@@ -59,9 +62,9 @@ extension VisitorView {
 		return GeometryReader { reader in
 			GeometryReader{ geometry in
 				ZStack {
-					Line(frame: .constant(geometry.frame(in: .local)),color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
+					Line(frame: .constant(geometry.frame(in: .local)),site: site, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
 						.offset(x: 0, y: -10)
-					Line(frame: .constant(geometry.frame(in: .local)),color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
+					Line(frame: .constant(geometry.frame(in: .local)),site: site, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
 						.offset(x: 0, y: 0)
 				}
 			}

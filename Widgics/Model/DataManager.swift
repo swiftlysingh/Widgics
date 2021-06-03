@@ -7,29 +7,38 @@
 
 import SwiftUI
 
-class DataManager: ObservableObject{
+struct DataManager{
 
 	@ObservedObject private var userSettings = UserSettings.shared
-	@ObservedObject private var visitorViews = VisitorsModel.shared
 
 	static let shared = DataManager()
 
 	private init() { }
 
-	func updateData<T>(for data: T) {
+	func updateRealtimeVisitors(for site : String, completionHandler: @escaping (_ : Data) -> Void){
+		let url = URL(string: "\(userSettings.address)/realtime/visitors?site_id=\(site)")
+
+		callAPI(url: url!){ result in
+			switch result {
+			case .failure(let error) : print("Fetching realtime viewers failed with error \(error)")
+			case .success(let data) : completionHandler(data)
+			}
+		}
+
+	}
+
+	func callAPI(url : URL, completion: @escaping (Result<Data,Error>) -> Void) {
 		let session = URLSession(configuration: .default)
-		let url = URL(string: ("https://analytics.swiftlysingh.com/api/v1/stats/realtime/visitors?site_id=swiftlysingh.com"))
-		var request = URLRequest(url: url!)
+		var request = URLRequest(url: url)
 		request.setValue("Bearer iMYIspVD7eFowdNu3yGu8ScOUOuDvFWKGG2BSdirebKXAXeiwtEk_wezccQdQ7WN", forHTTPHeaderField: "Authorization")
 
-		session.dataTask(with: request) { data,response, error in
-			guard let data = data,(error == nil) else {return}
-
-			guard let decodeData = try? JSONDecoder().decode(Int.self, from: data) else {return}
-
-			DispatchQueue.main.async {
-				self.visitorViews.views.append(decodeData)
+		session.dataTask(with: request) { data, response, error in
+			guard let data = data,(error == nil) else {
+				completion(.failure(error!))
+				return
 			}
+
+			completion(.success(data))
 		}.resume()
 	}
 }

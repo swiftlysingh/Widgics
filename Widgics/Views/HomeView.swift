@@ -23,7 +23,7 @@ struct HomeView: View {
 			List {
 				ForEach(userSettings.sites,id: \.self) { site in
 					Section(header: Text(site)) {
-						VisitorView()
+						VisitorView(site: site)
 							.frame(width: 170, height: 170)
 							.cornerRadius(20)
 							.overlay(RoundedRectangle(cornerRadius: 20)
@@ -38,9 +38,6 @@ struct HomeView: View {
 			.navigationBarItems(trailing: addButton)
 		}
 		.alert(isPresented: $isAlertShown, TextAlert(title: "Add Sites", placeholder: "Enter a URL for a site", accept: "Add", cancel: "Cancel", action: onAdd ))
-		.onAppear {
-			DataManager.shared.updateData(for: View.self)
-		}
 	}
 }
 
@@ -56,5 +53,6 @@ extension HomeView {
 	private func onAdd(site: String?){
 		guard let site = site else { return }
 		userSettings.sites.append(site)
+		VisitorsViewModel.shared.initializeDict(for: site)
 	}
 }
