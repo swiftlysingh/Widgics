@@ -12,6 +12,18 @@
 		FF004936263ED0280085AA7A /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF004935263ED0280085AA7A /* UserSettings.swift */; };
 		FF00493C263F2F330085AA7A /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF00493B263F2F330085AA7A /* VisitorView.swift */; };
 		FF18D6C62667FF340006A3F4 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18D6C52667FF340006A3F4 /* CGPoint.swift */; };
+		FF18D6CF2668EC220006A3F4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF18D6CE2668EC220006A3F4 /* WidgetKit.framework */; };
+		FF18D6D12668EC220006A3F4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF18D6D02668EC220006A3F4 /* SwiftUI.framework */; };
+		FF18D6D42668EC220006A3F4 /* RealtimeVisitors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18D6D32668EC220006A3F4 /* RealtimeVisitors.swift */; };
+		FF18D6D72668EC240006A3F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF18D6D62668EC240006A3F4 /* Assets.xcassets */; };
+		FF18D6D92668EC240006A3F4 /* RealtimeVisitors.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = FF18D6D52668EC220006A3F4 /* RealtimeVisitors.intentdefinition */; };
+		FF18D6DA2668EC240006A3F4 /* RealtimeVisitors.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = FF18D6D52668EC220006A3F4 /* RealtimeVisitors.intentdefinition */; };
+		FF18D6DD2668EC240006A3F4 /* RealtimeVisitorsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FF18D6CC2668EC220006A3F4 /* RealtimeVisitorsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FF18D6E22668EC870006A3F4 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF00493B263F2F330085AA7A /* VisitorView.swift */; };
+		FF18D6E32668ECA40006A3F4 /* VisitorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBF7FE26592D6700D587D9 /* VisitorsModel.swift */; };
+		FF18D6E42668ECB10006A3F4 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE0F3B26530F220064A928 /* Line.swift */; };
+		FF18D6E52668ECBF0006A3F4 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBF80226592E5000D587D9 /* Path.swift */; };
+		FF18D6E62668ECC50006A3F4 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18D6C52667FF340006A3F4 /* CGPoint.swift */; };
 		FFAE0F3C26530F220064A928 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE0F3B26530F220064A928 /* Line.swift */; };
 		FFE38A48263D90BE006980F7 /* WidgicsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A47263D90BE006980F7 /* WidgicsApp.swift */; };
 		FFE38A4A263D90BE006980F7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A49263D90BE006980F7 /* SettingsView.swift */; };
@@ -25,12 +37,43 @@
 		FFEBF80326592E5000D587D9 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBF80226592E5000D587D9 /* Path.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FF18D6DB2668EC240006A3F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFE38A3C263D90BE006980F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF18D6CB2668EC220006A3F4;
+			remoteInfo = RealtimeVisitorsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FF18D6DE2668EC250006A3F4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FF18D6DD2668EC240006A3F4 /* RealtimeVisitorsExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FF00492F263E350A0085AA7A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FF004931263E3B0D0085AA7A /* UIAlertControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtensions.swift; sourceTree = "<group>"; };
 		FF004935263ED0280085AA7A /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		FF00493B263F2F330085AA7A /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		FF18D6C52667FF340006A3F4 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		FF18D6CC2668EC220006A3F4 /* RealtimeVisitorsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RealtimeVisitorsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF18D6CE2668EC220006A3F4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		FF18D6D02668EC220006A3F4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FF18D6D32668EC220006A3F4 /* RealtimeVisitors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeVisitors.swift; sourceTree = "<group>"; };
+		FF18D6D52668EC220006A3F4 /* RealtimeVisitors.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = RealtimeVisitors.intentdefinition; sourceTree = "<group>"; };
+		FF18D6D62668EC240006A3F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF18D6D82668EC240006A3F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFAE0F3B26530F220064A928 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		FFE38A44263D90BE006980F7 /* Widgics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Widgics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE38A47263D90BE006980F7 /* WidgicsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgicsApp.swift; sourceTree = "<group>"; };
@@ -47,6 +90,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FF18D6C92668EC220006A3F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF18D6D12668EC220006A3F4 /* SwiftUI.framework in Frameworks */,
+				FF18D6CF2668EC220006A3F4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFE38A41263D90BE006980F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,10 +149,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FF18D6CD2668EC220006A3F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF18D6CE2668EC220006A3F4 /* WidgetKit.framework */,
+				FF18D6D02668EC220006A3F4 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF18D6D22668EC220006A3F4 /* RealtimeVisitors */ = {
+			isa = PBXGroup;
+			children = (
+				FF18D6D32668EC220006A3F4 /* RealtimeVisitors.swift */,
+				FF18D6D52668EC220006A3F4 /* RealtimeVisitors.intentdefinition */,
+				FF18D6D62668EC240006A3F4 /* Assets.xcassets */,
+				FF18D6D82668EC240006A3F4 /* Info.plist */,
+			);
+			path = RealtimeVisitors;
+			sourceTree = "<group>";
+		};
 		FFE38A3B263D90BE006980F7 = {
 			isa = PBXGroup;
 			children = (
 				FFE38A46263D90BE006980F7 /* Widgics */,
+				FF18D6D22668EC220006A3F4 /* RealtimeVisitors */,
+				FF18D6CD2668EC220006A3F4 /* Frameworks */,
 				FFE38A45263D90BE006980F7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				FFE38A44263D90BE006980F7 /* Widgics.app */,
+				FF18D6CC2668EC220006A3F4 /* RealtimeVisitorsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +223,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FF18D6CB2668EC220006A3F4 /* RealtimeVisitorsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF18D6E12668EC250006A3F4 /* Build configuration list for PBXNativeTarget "RealtimeVisitorsExtension" */;
+			buildPhases = (
+				FF18D6C82668EC220006A3F4 /* Sources */,
+				FF18D6C92668EC220006A3F4 /* Frameworks */,
+				FF18D6CA2668EC220006A3F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RealtimeVisitorsExtension;
+			productName = RealtimeVisitorsExtension;
+			productReference = FF18D6CC2668EC220006A3F4 /* RealtimeVisitorsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FFE38A43263D90BE006980F7 /* Widgics */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFE38A53263D90C1006980F7 /* Build configuration list for PBXNativeTarget "Widgics" */;
@@ -155,10 +247,12 @@
 				FFE38A40263D90BE006980F7 /* Sources */,
 				FFE38A41263D90BE006980F7 /* Frameworks */,
 				FFE38A42263D90BE006980F7 /* Resources */,
+				FF18D6DE2668EC250006A3F4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FF18D6DC2668EC240006A3F4 /* PBXTargetDependency */,
 			);
 			name = Widgics;
 			productName = Widgics;
@@ -174,6 +268,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					FF18D6CB2668EC220006A3F4 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					FFE38A43263D90BE006980F7 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -193,11 +290,20 @@
 			projectRoot = "";
 			targets = (
 				FFE38A43263D90BE006980F7 /* Widgics */,
+				FF18D6CB2668EC220006A3F4 /* RealtimeVisitorsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FF18D6CA2668EC220006A3F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF18D6D72668EC240006A3F4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFE38A42263D90BE006980F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,6 +316,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FF18D6C82668EC220006A3F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF18D6E22668EC870006A3F4 /* VisitorView.swift in Sources */,
+				FF18D6D92668EC240006A3F4 /* RealtimeVisitors.intentdefinition in Sources */,
+				FF18D6E32668ECA40006A3F4 /* VisitorsModel.swift in Sources */,
+				FF18D6E62668ECC50006A3F4 /* CGPoint.swift in Sources */,
+				FF18D6D42668EC220006A3F4 /* RealtimeVisitors.swift in Sources */,
+				FF18D6E52668ECBF0006A3F4 /* Path.swift in Sources */,
+				FF18D6E42668ECB10006A3F4 /* Line.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFE38A40263D90BE006980F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +338,7 @@
 				FFE38A4A263D90BE006980F7 /* SettingsView.swift in Sources */,
 				FFE38A57263DA204006980F7 /* DataManager.swift in Sources */,
 				FFE38A61263E2A93006980F7 /* ContentView.swift in Sources */,
+				FF18D6DA2668EC240006A3F4 /* RealtimeVisitors.intentdefinition in Sources */,
 				FFAE0F3C26530F220064A928 /* Line.swift in Sources */,
 				FFE38A48263D90BE006980F7 /* WidgicsApp.swift in Sources */,
 				FF004932263E3B0D0085AA7A /* UIAlertControllerExtensions.swift in Sources */,
@@ -233,7 +354,57 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FF18D6DC2668EC240006A3F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF18D6CB2668EC220006A3F4 /* RealtimeVisitorsExtension */;
+			targetProxy = FF18D6DB2668EC240006A3F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		FF18D6DF2668EC250006A3F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WMQY24R33;
+				INFOPLIST_FILE = RealtimeVisitors/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushpinderpalsingh.Widgics.RealtimeVisitors;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF18D6E02668EC250006A3F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WMQY24R33;
+				INFOPLIST_FILE = RealtimeVisitors/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pushpinderpalsingh.Widgics.RealtimeVisitors;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FFE38A51263D90C1006980F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -353,6 +524,7 @@
 		FFE38A54263D90C1006980F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +547,7 @@
 		FFE38A55263D90C1006980F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -397,6 +570,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FF18D6E12668EC250006A3F4 /* Build configuration list for PBXNativeTarget "RealtimeVisitorsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF18D6DF2668EC250006A3F4 /* Debug */,
+				FF18D6E02668EC250006A3F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FFE38A3F263D90BE006980F7 /* Build configuration list for PBXProject "Widgics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
