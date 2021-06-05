@@ -6,14 +6,24 @@
 //
 
 import SwiftUI
+import RealmSwift
 
-struct RealTimeVisitor {
-	var visitors: [Int]
-	var percentage : RealtimePercentage
-}
+final class RealtimeVisitor: Object,ObjectKeyIdentifiable {
 
-struct RealtimePercentage {
-	var value : Int?
-	var symbol : Image
-	var color : Color
+	@objc dynamic var name = String()
+
+	@objc dynamic var visitors = [Int]()
+
+	@objc dynamic var showPercent = false
+
+	@objc dynamic var percentValue = Int()
+
+	@objc dynamic var percentSymbolString = "arrow.up"
+
+//	@objc dynamic var color = Color.green
+
+	override class func primaryKey() -> String? {
+		"name"
+	}
+
 }
