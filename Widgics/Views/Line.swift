@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct Line: View {
-	@ObservedObject var viewModel = VisitorsViewModel.shared
+
 	@Binding var frame: CGRect
 	@State private var showFull: Bool = false
-	let site: String
 
+
+	var visitors: [Int]
 	var color: [Color] = [.blue]
 	var minDataValue: Int = 0
 	var maxDataValue: Int? = nil
@@ -20,14 +21,14 @@ struct Line: View {
 	let padding:CGFloat = 30
 
 	var stepWidth: CGFloat {
-		if viewModel.data[site]!.visitors.count < 2 {
+		if visitors.count < 2 {
 			return 0
 		}
-		return frame.size.width / CGFloat(viewModel.data[site]!.visitors.count-1)
+		return frame.size.width / CGFloat(visitors.count-1)
 	}
 	var stepHeight: CGFloat {
 		let min = minDataValue
-		let max = viewModel.data[site]!.visitors.max()
+		let max = visitors.max()
 		if let max = max, min != max {
 			if (min <= 0){
 				return (frame.size.height-padding) / CGFloat(max - min)
@@ -38,7 +39,7 @@ struct Line: View {
 		return 0
 	}
 	var closedPath: Path {
-		let points = self.viewModel.data[site]!.visitors
+		let points = visitors
 		return Path.quadClosedCurvedPathWithPoints(points: points, step: CGPoint(x: stepWidth, y: stepHeight), globalOffset: minDataValue)
 	}
 
@@ -59,7 +60,7 @@ struct Line_Previews: PreviewProvider {
 
 	static var previews: some View {
 		GeometryReader{ geometry in
-			Line(frame: .constant(geometry.frame(in: .local)), site: "swiftlysingh.com")
+			Line(frame: .constant(geometry.frame(in: .local)), visitors: [0,56,7])
 		}.frame(width: 320, height: 160)
 	}
 }

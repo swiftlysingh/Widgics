@@ -10,18 +10,12 @@ import SwiftUI
 class VisitorsViewModel: ObservableObject {
 
 	let dataManager = DataManager.shared
-
-	static let shared = VisitorsViewModel()
 	
-	@Published var data: [String : RealTimeVisitor] {
+	@Published var data: [String : RealTimeVisitor] = [String:RealTimeVisitor]() {
 		didSet {
 			let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: data, requiringSecureCoding: false)
 			UserDefaults.standard.set(encodedData, forKey: "visitorViewData")
 		}
-	}
-
-	private init() {
-		self.data = UserDefaults.standard.object(forKey: "visitorViewData") as? [String:RealTimeVisitor] ?? [String:RealTimeVisitor]()
 	}
 
 	func getNewData(for site: String){
@@ -45,9 +39,5 @@ class VisitorsViewModel: ObservableObject {
 				}
 			}
 		}
-	}
-
-	func initializeDict(for site : String) {
-		data[site] = RealTimeVisitor(visitors: [0], percentage: RealtimePercentage(value: nil))
 	}
 }

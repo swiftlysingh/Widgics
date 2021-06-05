@@ -53,6 +53,5 @@ extension HomeView {
 	private func onAdd(site: String?){
 		guard let site = site else { return }
 		userSettings.sites.append(site)
-		VisitorsViewModel.shared.initializeDict(for: site)
 	}
 }

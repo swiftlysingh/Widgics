@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VisitorView: View {
 
-	@ObservedObject private var viewModel = VisitorsViewModel.shared
+	@ObservedObject private var viewModel = VisitorsViewModel()
 	let site: String
 
 	var body: some View {
@@ -62,9 +62,9 @@ extension VisitorView {
 		return GeometryReader { reader in
 			GeometryReader{ geometry in
 				ZStack {
-					Line(frame: .constant(geometry.frame(in: .local)),site: site, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
+					Line(frame: .constant(geometry.frame(in: .local)), visitors: viewModel.data["site"]!.visitors, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
 						.offset(x: 0, y: -10)
-					Line(frame: .constant(geometry.frame(in: .local)),site: site, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
+					Line(frame: .constant(geometry.frame(in: .local)),visitors: viewModel.data["site"]!.visitors, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
 						.offset(x: 0, y: 0)
 				}
 			}
