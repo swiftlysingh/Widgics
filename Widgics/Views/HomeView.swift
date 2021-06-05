@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct HomeView: View {
 
@@ -53,5 +54,11 @@ extension HomeView {
 	private func onAdd(site: String?){
 		guard let site = site else { return }
 		userSettings.sites.append(site)
+		let newSite = RealtimeVisitor(value: [site])
+		let realm = try! Realm()
+		print(Realm.Configuration.defaultConfiguration.fileURL!)
+		try! realm.write({
+			realm.add(newSite)
+		})
 	}
 }

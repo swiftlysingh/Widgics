@@ -8,11 +8,11 @@
 import SwiftUI
 import RealmSwift
 
-final class RealtimeVisitor: Object,ObjectKeyIdentifiable {
+class RealtimeVisitor: Object,ObjectKeyIdentifiable {
 
 	@objc dynamic var name = String()
 
-	@objc dynamic var visitors = [Int]()
+	var visitors = RealmSwift.List<Int>()
 
 	@objc dynamic var showPercent = false
 

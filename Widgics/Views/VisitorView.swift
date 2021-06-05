@@ -37,7 +37,7 @@ extension VisitorView {
 	fileprivate func StatisticsView() -> some View {
 		return HStack {
 			VStack {
-				Text("\(viewModel.data[site]!.visitors.last!)" as String)
+				Text("Hello" as String)
 					.font(.system(size: 56))
 					.fontWeight(.bold)
 					.multilineTextAlignment(.trailing)
@@ -62,10 +62,10 @@ extension VisitorView {
 		return GeometryReader { reader in
 			GeometryReader{ geometry in
 				ZStack {
-					Line(frame: .constant(geometry.frame(in: .local)), visitors: viewModel.data["site"]!.visitors, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
-						.offset(x: 0, y: -10)
-					Line(frame: .constant(geometry.frame(in: .local)),visitors: viewModel.data["site"]!.visitors, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
-						.offset(x: 0, y: 0)
+//					Line(frame: .constant(geometry.frame(in: .local)), visitors: viewModel.data["site"]!.visitors, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
+//						.offset(x: 0, y: -10)
+//					Line(frame: .constant(geometry.frame(in: .local)),visitors: viewModel.data["site"]!.visitors, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
+//						.offset(x: 0, y: 0)
 				}
 			}
 		}

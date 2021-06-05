@@ -16,13 +16,14 @@ class VisitorsViewModel: ObservableObject {
 
 	@ObservedResults(RealtimeVisitor.self) var data
 
-	private init() {
+//	private init() {
 //		let realm = try Realm()
 //		let data = realm.object(ofType: RealtimeVisitor.self, forPrimaryKey: "swift")
-	}
+//	}
 
 	func getNewData(for site: String){
-		let sites = data.filter("name == swiftlysingh.com").first
+//		let sites = data.filter("name == swiftlysingh.com").first
+		let sites = data.first
 		print(sites?.percentSymbolString)
 	}
 }

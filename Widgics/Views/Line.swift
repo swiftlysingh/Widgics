@@ -12,7 +12,6 @@ struct Line: View {
 	@Binding var frame: CGRect
 	@State private var showFull: Bool = false
 
-
 	var visitors: [Int]
 	var color: [Color] = [.blue]
 	var minDataValue: Int = 0
