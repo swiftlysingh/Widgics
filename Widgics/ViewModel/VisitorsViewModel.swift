@@ -21,12 +21,7 @@ class VisitorsViewModel: ObservableObject {
 	}
 
 	private init() {
-		if let decoded = UserDefaults.standard.object(forKey: "visitorViewData") as? Data {
-			self.data = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as! [String : RealTimeVisitor]
-		}else{
-			self.data = [String:RealTimeVisitor]()
-		}
-//		self.data = UserDefaults.standard.object(forKey: "visitorViewData") as? [String:RealTimeVisitor] ?? [String:RealTimeVisitor]()
+		self.data = UserDefaults.standard.object(forKey: "visitorViewData") as? [String:RealTimeVisitor] ?? [String:RealTimeVisitor]()
 	}
 
 	func getNewData(for site: String){
@@ -41,13 +36,13 @@ class VisitorsViewModel: ObservableObject {
 			} else {
 				self.data[site]?.percentage.value = ((endingViewers - startingViewers!)/startingViewers!)*100
 
-//				if (self.data[site]?.percentage.value)! >= 0 {
-//					self.data[site]?.percentage.color = Color.green
-//					self.data[site]?.percentage.symbol = Image(systemName: "arrow.up")
-//				} else {
-//					self.data[site]?.percentage.color = Color.red
-//					self.data[site]?.percentage.symbol = Image(systemName: "arrow.down")
-//				}
+				if (self.data[site]?.percentage.value)! >= 0 {
+					self.data[site]?.percentage.color = Color.green
+					self.data[site]?.percentage.symbol = Image(systemName: "arrow.up")
+				} else {
+					self.data[site]?.percentage.color = Color.red
+					self.data[site]?.percentage.symbol = Image(systemName: "arrow.down")
+				}
 			}
 		}
 	}

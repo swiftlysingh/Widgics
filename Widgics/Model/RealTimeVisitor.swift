@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct RealTimeVisitor: Codable {
+struct RealTimeVisitor {
 	var visitors: [Int]
 	var percentage : RealtimePercentage
 }
 
-struct RealtimePercentage : Codable {
+struct RealtimePercentage {
 	var value : Int?
-//	let symbol : Image
-//	let color : Color
+	var symbol : Image
+	var color : Color
 }
