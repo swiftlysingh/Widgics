@@ -9,8 +9,7 @@ import SwiftUI
 
 struct VisitorView: View {
 
-	@ObservedObject private var viewModel = VisitorsViewModel()
-	let site: String
+	@ObservedObject var viewModel : VisitorsViewModel
 
 	var body: some View {
 		VStack {
@@ -18,14 +17,14 @@ struct VisitorView: View {
 			GraphView()
 		}
 		.onAppear(perform: {
-			viewModel.getNewData(for: site)
+			viewModel.getNewData()
 		})
 	}
 }
 
 struct VisitorView_Previews: PreviewProvider {
     static var previews: some View {
-		VisitorView(site: "swiftlysingh.com")
+		VisitorView(viewModel: VisitorsViewModel(for: "swiftlysingh.com"))
 			.previewLayout(PreviewLayout.fixed(width: 170, height: 170))
     }
 }
@@ -37,7 +36,7 @@ extension VisitorView {
 	fileprivate func StatisticsView() -> some View {
 		return HStack {
 			VStack {
-				Text("Hello" as String)
+				Text("\(viewModel.realtimeVisitor.visitors.last!)" as String)
 					.font(.system(size: 56))
 					.fontWeight(.bold)
 					.multilineTextAlignment(.trailing)

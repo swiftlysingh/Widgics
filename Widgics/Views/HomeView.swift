@@ -24,7 +24,7 @@ struct HomeView: View {
 			List {
 				ForEach(userSettings.sites,id: \.self) { site in
 					Section(header: Text(site)) {
-						VisitorView(site: site)
+						VisitorView(viewModel: VisitorsViewModel(for: site))
 							.frame(width: 170, height: 170)
 							.cornerRadius(20)
 							.overlay(RoundedRectangle(cornerRadius: 20)
@@ -54,9 +54,10 @@ extension HomeView {
 	private func onAdd(site: String?){
 		guard let site = site else { return }
 		userSettings.sites.append(site)
-		let newSite = RealtimeVisitor(value: [site])
-		let realm = try! Realm()
+
+		let newSite = RealtimeVisitor(value: [site,[0]])
 		print(Realm.Configuration.defaultConfiguration.fileURL!)
+		let realm = try! Realm()
 		try! realm.write({
 			realm.add(newSite)
 		})
