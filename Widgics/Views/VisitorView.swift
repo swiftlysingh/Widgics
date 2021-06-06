@@ -41,15 +41,17 @@ extension VisitorView {
 					.fontWeight(.bold)
 					.multilineTextAlignment(.trailing)
 					.padding([.bottom],-15.0)
-				HStack {
-					Image(systemName: "arrow.up")
-						.font(.system(size: 20))
-						.padding(.trailing, -4.0)
-					Text("10%")
-						.font(.system(size: 20))
-						.padding(.leading, -4.0)
+				if viewModel.realtimeVisitor.showPercent{
+					HStack {
+						Image(systemName: viewModel.realtimeVisitor.percentSymbolString)
+							.font(.system(size: 20))
+							.padding(.trailing, -4.0)
+						Text("\(viewModel.realtimeVisitor.percentValue)")
+							.font(.system(size: 20))
+							.padding(.leading, -4.0)
+					}
+					.foregroundColor(.green)
 				}
-				.foregroundColor(.green)
 				Spacer()
 			}
 			.padding(.leading,7.0)
@@ -61,10 +63,9 @@ extension VisitorView {
 		return GeometryReader { reader in
 			GeometryReader{ geometry in
 				ZStack {
-//					Line(frame: .constant(geometry.frame(in: .local)), visitors: viewModel.data["site"]!.visitors, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
-//						.offset(x: 0, y: -10)
-//					Line(frame: .constant(geometry.frame(in: .local)),visitors: viewModel.data["site"]!.visitors, color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
-//						.offset(x: 0, y: 0)
+					Line(frame: .constant(geometry.frame(in: .local)), visitors: Array(viewModel.realtimeVisitor.visitors), color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
+						.offset(x: 0, y: -10)
+					Line(frame: .constant(geometry.frame(in: .local)),visitors: Array(viewModel.realtimeVisitor.visitors), color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
 				}
 			}
 		}
