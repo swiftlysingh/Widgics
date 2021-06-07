@@ -25,7 +25,30 @@ class VisitorsViewModel: ObservableObject {
 	}
 
 	func getNewData(){
-		let sites = data.filter("name == %@","singh.com").first
-		print(sites?.percentSymbolString)
+		dataManager.updateRealtimeVisitors(for: site) { visitors in
+
+			let newVisitors = try! JSONDecoder().decode(Int.self, from: visitors)
+
+			let latestVisitor = self.realtimeVisitor.visitors.last!
+			self.realtimeVisitor.visitors.append(newVisitors)
+
+			if latestVisitor == 0 {
+				self.realtimeVisitor.showPercent = false
+			} else {
+				self.realtimeVisitor.percentValue = ((newVisitors - latestVisitor)/latestVisitor*100)
+
+				if self.realtimeVisitor.percentValue > 0 {
+					self.realtimeVisitor.percentSymbolString = "arrow.up"
+				} else {
+					self.realtimeVisitor.percentSymbolString = "arrow.down"
+				}
+			}
+
+			let realm = try!   Realm()
+
+			try! realm.write({
+				realm.add(self.realtimeVisitor)
+			})
+		}
 	}
 }

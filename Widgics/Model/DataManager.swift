@@ -27,7 +27,7 @@ struct DataManager{
 
 	}
 
-	func callAPI(url : URL, completion: @escaping (Result<Data,Error>) -> Void) {
+	private func callAPI(url : URL, completion: @escaping (Result<Data,Error>) -> Void) {
 		let session = URLSession(configuration: .default)
 		var request = URLRequest(url: url)
 		request.setValue("Bearer iMYIspVD7eFowdNu3yGu8ScOUOuDvFWKGG2BSdirebKXAXeiwtEk_wezccQdQ7WN", forHTTPHeaderField: "Authorization")
