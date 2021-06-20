@@ -39,29 +39,35 @@ class VisitorsViewModel: ObservableObject {
 	}
 
 	func getNewData(){
-		dataManager.updateRealtimeVisitors(for: data.name) { visitors in
+		let latestVisitor = self.data.visitors.last!
 
-			let newVisitors = try! JSONDecoder().decode(Int.self, from: visitors)
+		dataManager.updateRealtimeVisitors(for: data.name) { data in
+			if let currentVisitor = try? JSONDecoder().decode(Int.self, from: data) {
+				DispatchQueue.main.async {
+					try! self.realm?.write({
 
-			let latestVisitor = self.data.visitors.last!
-			self.data.visitors.append(newVisitors)
+						self.data.visitors.append(currentVisitor)
+						if latestVisitor == 0 {
+							self.data.showPercent = false
+						} else {
+							self.data.showPercent = true
+							self.data.percentValue = ((currentVisitor - latestVisitor)/latestVisitor*100)
+							//TODO: Add color option here
+							if self.data.percentValue > 0 {
+								self.data.percentSymbolString = "arrow.up"
+							} else {
+								self.data.percentSymbolString = "arrow.down"
+							}
+						}
 
-			if latestVisitor == 0 {
-				self.data.showPercent = false
-			} else {
-				self.data.percentValue = ((newVisitors - latestVisitor)/latestVisitor*100)
-				//TODO: Add color option here
-				if self.data.percentValue > 0 {
-					self.data.percentSymbolString = "arrow.up"
-				} else {
-					self.data.percentSymbolString = "arrow.down"
+					})
 				}
+			} else {
+				//Handle Error
+				print("Error Decoding")
 			}
-
-			try? self.realm?.write({
-				self.realm?.add(self.data)
-			})
 		}
+
 	}
 
 	func updateTest() {

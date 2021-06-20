@@ -16,11 +16,10 @@ struct VisitorView: View {
 			StatisticsView()
 			GraphView()
 		}
-//		.onAppear(perform: {
-//			viewModel.getNewData()
-//		})
+		.onAppear(perform: {
+			viewModel.getNewData()
+		})
 		.onTapGesture {
-			print("Tapped")
 			viewModel.updateTest()
 		}
 	}
