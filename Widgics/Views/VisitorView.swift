@@ -19,9 +19,6 @@ struct VisitorView: View {
 		.onAppear(perform: {
 			viewModel.getNewData()
 		})
-		.onTapGesture {
-			viewModel.updateTest()
-		}
 	}
 }
 
@@ -67,7 +64,7 @@ extension VisitorView {
 			GeometryReader{ geometry in
 				ZStack {
 					Line(frame: .constant(geometry.frame(in: .local)), visitors: Array(viewModel.data.visitors), color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
-						.offset(x: 0, y: -10)
+						.offset(x: -5, y: -10)
 					Line(frame: .constant(geometry.frame(in: .local)),visitors: Array(viewModel.data.visitors), color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
 				}
 			}

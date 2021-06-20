@@ -23,7 +23,7 @@ class VisitorsViewModel: ObservableObject {
 		if let data = realm?.object(ofType: RealtimeVisitor.self, forPrimaryKey: site) {
 			self.data = data
 		} else {
-			data = RealtimeVisitor(value: [site,[0]])
+			data = RealtimeVisitor(value: [site,[0,30,20,68,58,100]])
 			try? realm?.write({
 				realm?.add(data)
 			})
@@ -67,13 +67,5 @@ class VisitorsViewModel: ObservableObject {
 				print("Error Decoding")
 			}
 		}
-
-	}
-
-	func updateTest() {
-		print("Updating LALALALA")
-		try? self.realm?.write({
-			self.data.visitors.append(101)
-		})
 	}
 }
