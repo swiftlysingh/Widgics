@@ -16,9 +16,13 @@ struct VisitorView: View {
 			StatisticsView()
 			GraphView()
 		}
-		.onAppear(perform: {
-			viewModel.getNewData()
-		})
+//		.onAppear(perform: {
+//			viewModel.getNewData()
+//		})
+		.onTapGesture {
+			print("Tapped")
+			viewModel.updateTest()
+		}
 	}
 }
 
@@ -36,17 +40,17 @@ extension VisitorView {
 	fileprivate func StatisticsView() -> some View {
 		return HStack {
 			VStack {
-				Text("\(viewModel.realtimeVisitor.visitors.last!)" as String)
+				Text("\(viewModel.data.visitors.last!)" as String)
 					.font(.system(size: 56))
 					.fontWeight(.bold)
 					.multilineTextAlignment(.trailing)
 					.padding([.bottom],-15.0)
-				if viewModel.realtimeVisitor.showPercent{
+				if viewModel.data.showPercent{
 					HStack {
-						Image(systemName: viewModel.realtimeVisitor.percentSymbolString)
+						Image(systemName: viewModel.data.percentSymbolString)
 							.font(.system(size: 20))
 							.padding(.trailing, -4.0)
-						Text("\(viewModel.realtimeVisitor.percentValue)")
+						Text("\(viewModel.data.percentValue)")
 							.font(.system(size: 20))
 							.padding(.leading, -4.0)
 					}
@@ -63,9 +67,9 @@ extension VisitorView {
 		return GeometryReader { reader in
 			GeometryReader{ geometry in
 				ZStack {
-					Line(frame: .constant(geometry.frame(in: .local)), visitors: Array(viewModel.realtimeVisitor.visitors), color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
+					Line(frame: .constant(geometry.frame(in: .local)), visitors: Array(viewModel.data.visitors), color: [Color.init(red: 0.380, green: 0.44, blue: 0.9, opacity: 0.5)])
 						.offset(x: 0, y: -10)
-					Line(frame: .constant(geometry.frame(in: .local)),visitors: Array(viewModel.realtimeVisitor.visitors), color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
+					Line(frame: .constant(geometry.frame(in: .local)),visitors: Array(viewModel.data.visitors), color: [Color.init(red: 0.380, green: 0.44, blue: 0.9)])
 				}
 			}
 		}

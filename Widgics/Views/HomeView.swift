@@ -54,12 +54,5 @@ extension HomeView {
 	private func onAdd(site: String?){
 		guard let site = site else { return }
 		userSettings.sites.append(site)
-
-		let newSite = RealtimeVisitor(value: [site,[0]])
-		print(Realm.Configuration.defaultConfiguration.fileURL!)
-		let realm = try! Realm()
-		try! realm.write({
-			realm.add(newSite)
-		})
 	}
 }
