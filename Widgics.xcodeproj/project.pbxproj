@@ -15,6 +15,7 @@
 		FF18D6E82669245D0006A3F4 /* RealTimeVisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18D6E72669245D0006A3F4 /* RealTimeVisitor.swift */; };
 		FF18D6EB266B97A40006A3F4 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FF18D6EA266B97A40006A3F4 /* Realm */; };
 		FF18D6ED266B97A40006A3F4 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF18D6EC266B97A40006A3F4 /* RealmSwift */; };
+		FF3D1920267FDD06006867B9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3D191F267FDD06006867B9 /* Color.swift */; };
 		FFAE0F3C26530F220064A928 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFAE0F3B26530F220064A928 /* Line.swift */; };
 		FFE38A48263D90BE006980F7 /* WidgicsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A47263D90BE006980F7 /* WidgicsApp.swift */; };
 		FFE38A4A263D90BE006980F7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE38A49263D90BE006980F7 /* SettingsView.swift */; };
@@ -35,6 +36,7 @@
 		FF00493B263F2F330085AA7A /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		FF18D6C52667FF340006A3F4 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		FF18D6E72669245D0006A3F4 /* RealTimeVisitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeVisitor.swift; sourceTree = "<group>"; };
+		FF3D191F267FDD06006867B9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		FFAE0F3B26530F220064A928 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		FFE38A44263D90BE006980F7 /* Widgics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Widgics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE38A47263D90BE006980F7 /* WidgicsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgicsApp.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				FF004931263E3B0D0085AA7A /* UIAlertControllerExtensions.swift */,
 				FFEBF80226592E5000D587D9 /* Path.swift */,
 				FF18D6C52667FF340006A3F4 /* CGPoint.swift */,
+				FF3D191F267FDD06006867B9 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				FFE38A57263DA204006980F7 /* DataManager.swift in Sources */,
 				FFE38A61263E2A93006980F7 /* ContentView.swift in Sources */,
 				FFAE0F3C26530F220064A928 /* Line.swift in Sources */,
+				FF3D1920267FDD06006867B9 /* Color.swift in Sources */,
 				FFE38A48263D90BE006980F7 /* WidgicsApp.swift in Sources */,
 				FF004932263E3B0D0085AA7A /* UIAlertControllerExtensions.swift in Sources */,
 				FFEBF80326592E5000D587D9 /* Path.swift in Sources */,

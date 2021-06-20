@@ -20,7 +20,7 @@ class RealtimeVisitor: Object,ObjectKeyIdentifiable {
 
 	@objc dynamic var percentSymbolString = "arrow.up"
 
-//	@objc dynamic var color = Color.green
+	@objc dynamic var color = String()
 
 	override class func primaryKey() -> String? {
 		"name"

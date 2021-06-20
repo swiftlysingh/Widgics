@@ -50,7 +50,7 @@ extension VisitorView {
 							.font(.system(size: 20))
 							.padding(.leading, -4.0)
 					}
-					.foregroundColor(.green)
+					.foregroundColor(Color.init(hex: viewModel.data.color))
 				}
 				Spacer()
 			}

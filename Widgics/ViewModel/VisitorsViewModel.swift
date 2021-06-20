@@ -52,11 +52,12 @@ class VisitorsViewModel: ObservableObject {
 						} else {
 							self.data.showPercent = true
 							self.data.percentValue = ((currentVisitor - latestVisitor)/latestVisitor*100)
-							//TODO: Add color option here
 							if self.data.percentValue > 0 {
 								self.data.percentSymbolString = "arrow.up"
+								self.data.color = "3BC452"
 							} else {
 								self.data.percentSymbolString = "arrow.down"
+								self.data.color = "FA2B2D"
 							}
 						}
 
