@@ -1,7 +1,7 @@
 # [](https://github.com/swiftlysingh/Widgics)Widgics
-### [](https://plausible.io/)Widgets for Plausible Analytics
+### Widgets for Plausible Analytics
 
-Widgics is an open-source iOS app which enables you to add your plausible analytics directly on your iOS homescreen. The project is work in progress, and completion depends upon the amount of interest it generates. 
+Widgics is an open-source iOS app which enables you to add your [Plausible Analytics](https://plausible.io/) directly on your iOS homescreen. The project is work in progress, and completion depends upon the amount of interest it generates. 
 
 The project uses test-drive agile development processes, where requirements are turned into test cases, and code is improved upon. 
 
